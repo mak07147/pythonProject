@@ -21,4 +21,4 @@ def encrypt(text):
                 str = str + result2
             i = i + 1
         return str + text[len(text) - 1]
-print(encrypt('move!')) #taatkc!
+print(encrypt('attack!')) #taatkc!

@@ -49,9 +49,6 @@
 # my_dog = Dog('Willie', 5)
 # print(my_dog.sit())
 
-
-
-
 import string
 
 

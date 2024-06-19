@@ -28,3 +28,10 @@ Next-Hop              {}
 Last update           {}
 Outbound Interface    {}
 """
+
+a = ospf_route.split()
+
+b = a.remove('via')
+d_keys = ['Prefix','AD/Metric','Next-Hop','Last update','Outbound Interface']
+
+print('\n'.join(d_keys).format(a))

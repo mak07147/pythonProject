@@ -20,7 +20,7 @@ ospf_route. Значения из строки ospf_route надо получи�
 проверять результат.
 """
 
-ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+
 template = """
 Prefix                {}
 AD/Metric             {}
@@ -28,10 +28,17 @@ Next-Hop              {}
 Last update           {}
 Outbound Interface    {}
 """
+ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
 
-a = ospf_route.split()
+output = "\n{:25} {}" * 5
 
-b = a.remove('via')
-d_keys = ['Prefix','AD/Metric','Next-Hop','Last update','Outbound Interface']
-
-print('\n'.join(d_keys).format(a))
+route = ospf_route.replace(",", " ").replace("[", "").replace("]", "")
+route = route.split()
+a = output.format(
+        "Prefix", route[0],
+        "AD/Metric", route[1],
+        "Next-Hop", route[3],
+        "Last update", route[4],
+        "Outbound Interface", route[5],
+)
+print(a)

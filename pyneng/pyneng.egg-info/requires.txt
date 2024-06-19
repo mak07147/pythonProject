@@ -1,0 +1,7 @@
+Click
+jinja2
+pytest
+pytest-clarity
+pytest-json-report
+six
+textfsm
